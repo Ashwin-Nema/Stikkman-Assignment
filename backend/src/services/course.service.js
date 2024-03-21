@@ -57,9 +57,19 @@ const deleteCourseById = async (courseId) => {
   }
 };
 
+const getCourseById = async (courseId) => {
+  const query = `SELECT * FROM course WHERE id = ${courseId};`;
+  const data = await queryAsync(query);
+  if (!data?.[0]) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Course not found');
+  }
+  return data[0];
+};
+
 module.exports = {
   createCourse,
   getAllCoursesByFltr,
   updateCourseById,
   deleteCourseById,
+  getCourseById,
 };

@@ -8,7 +8,6 @@ router
   .route('/')
   .post(validate(courseValidation.createCourse), courseController.createCourse);
 
-
 router
   .route('/:courseId')
   .put(
@@ -18,6 +17,10 @@ router
   .delete(
     validate(courseValidation.deleteCourseById),
     courseController.deleteCourseById
+  )
+  .get(
+    validate(courseValidation.getCourseById),
+    courseController.getCourseById
   );
 
 module.exports = router;

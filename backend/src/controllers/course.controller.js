@@ -1,7 +1,6 @@
 const catchAsync = require('../utils/catchAsync');
 const { courseService } = require('../services');
 const httpStatus = require('http-status');
-const pick = require('../utils/pick');
 
 const createCourse = catchAsync(async (req, res) => {
   await courseService.createCourse(req.body);
@@ -28,4 +27,9 @@ const deleteCourseById = catchAsync(async(req, res) => {
   res.status(httpStatus.NO_CONTENT).send();
 })
 
-module.exports = { createCourse, getAllCourses, updateCourseById, deleteCourseById };
+const getCourseById = catchAsync(async(req, res) => {
+  const data = await courseService.getCourseById(req.params.courseId);
+  res.send(data)
+})
+
+module.exports = { createCourse, getAllCourses, updateCourseById, deleteCourseById, getCourseById };

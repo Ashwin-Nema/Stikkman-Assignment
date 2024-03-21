@@ -22,6 +22,12 @@ const updateCourseById = {
   }),
 };
 
+const getCourseById = {
+  params: Joi.object().keys({
+    courseId: Joi.number().required(),
+  }),
+};
+
 const deleteCourseById = {
   params: Joi.object().keys({
     courseId: Joi.number().required(),
@@ -46,4 +52,5 @@ module.exports = {
   deleteCourseById,
   getCourses,
   getCoursesByAuthor,
+  getCourseById,
 };
