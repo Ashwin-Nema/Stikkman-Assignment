@@ -27,6 +27,7 @@ Before starting, ensure that you have the following installed:
 - If the backend is running on a port other than 4000, update the `PORT` variable accordingly in the `.env` file.
 - MySQL host, user, and password should be provided in the respective variables.
 - Cloudinary configuration details should be obtained from the [Cloudinary account](https://cloudinary.com/) and added to the `.env` file.
+- For video tutorial for entire setup please refer: [Project setup video](https://drive.google.com/file/d/1Z9y0ywte1E9PLy4RlCcs1FigRusKfkoW/view?usp=sharing)
 
 ## Frontend Configuration
 
@@ -34,7 +35,6 @@ If the backend is running on a port other than 4000, follow these steps to confi
 
 1. Open the file `rest-urls.js` located at `frontend/src/app/lib/rest-urls.js`.
 2. Update the `hostname` constant to specify the correct port on which the backend is running.
-3. For video tutorial for entire setup please refer: [Project setup video](https://drive.google.com/file/d/1Z9y0ywte1E9PLy4RlCcs1FigRusKfkoW/view?usp=sharing)
 
 
 ## Installation
